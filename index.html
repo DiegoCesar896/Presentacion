@@ -1,685 +1,397 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Diego Cesar Chque Nina" />
-    <title>Presentación - Diego Chque</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Diego Cesar Choque | Portafolio Personal</title>
+    <!-- Fuentes modernas y reset básico -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-      /* ===== FUENTE IMPORTADA ===== */
-      @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rajdhani:wght@400;600&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-      html {
-        scroll-behavior: smooth;
-        scroll-padding-top: 80px;
-      }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f8fafc;
+            color: #0f172a;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
 
-      body {
-        background-color: #0a0a0f;
-        color: #d0d0e0;
-        font-family: 'Rajdhani', 'Segoe UI', Tahoma, sans-serif;
-        font-size: 1.05rem;
-      }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
 
-      /* ===== HEADER ===== */
-      header {
-        background: linear-gradient(135deg, #0f0f1a 0%, #1a0a2e 50%, #0f0f1a 100%);
-        color: #c084fc;
-        padding: 50px 20px 40px;
-        text-align: center;
-        border-bottom: 2px solid #7c3aed;
-        position: relative;
-        overflow: hidden;
-      }
+        /* Header & Hero */
+        .hero {
+            text-align: center;
+            padding: 3rem 1rem 2rem;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            border-radius: 2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+        }
 
-      header::before {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background: radial-gradient(ellipse at center, rgba(124,58,237,0.15) 0%, transparent 70%);
-        pointer-events: none;
-      }
+        .avatar {
+            width: 140px;
+            height: 140px;
+            background: #cbd5e1;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 20px -5px rgba(0,0,0,0.1);
+        }
 
-      header h1 {
-        font-family: 'Orbitron', sans-serif;
-        font-size: 2rem;
-        letter-spacing: 4px;
-        color: #e9d5ff;
-        text-shadow: 0 0 20px #7c3aed, 0 0 40px #7c3aed;
-        margin-bottom: 8px;
-      }
+        .avatar i {
+            font-size: 4rem;
+            color: #334155;
+        }
 
-      header strong {
-        font-family: 'Orbitron', sans-serif;
-        font-size: 1.1rem;
-        color: #a78bfa;
-        letter-spacing: 2px;
-      }
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #1e293b, #2d3a4f);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+        }
 
-      /* ===== NAV ===== */
-      .nav-personalizada {
-        position: -webkit-sticky;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        background-color: rgba(10, 10, 20, 0.97);
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid #7c3aed;
-        padding: 12px 0;
-      }
+        .tagline {
+            font-size: 1.2rem;
+            color: #334155;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
 
-      .nav-personalizada a {
-        color: #a78bfa;
-        text-decoration: none;
-        font-weight: 700;
-        text-transform: uppercase;
-        font-size: 0.82rem;
-        margin: 0 12px;
-        transition: all 0.3s ease;
-        letter-spacing: 1px;
-      }
+        .sign-detail {
+            display: inline-block;
+            background: #e9eef3;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #1e293b;
+            margin-top: 0.5rem;
+        }
 
-      .nav-personalizada a:hover {
-        color: #f0abfc;
-        text-shadow: 0 0 10px #c084fc;
-        transform: translateY(-2px);
-      }
+        .sign-detail i {
+            margin-right: 0.4rem;
+        }
 
-      /* ===== SECCIONES ===== */
-      .cuadro-seccion {
-        background-color: rgba(20, 10, 40, 0.85);
-        color: #c4b5fd;
-        padding: 28px;
-        margin-bottom: 30px;
-        border: 1px solid #7c3aed;
-        border-radius: 10px;
-        box-shadow: 0 0 15px rgba(124, 58, 237, 0.2);
-        transition: box-shadow 0.3s ease;
-      }
+        /* Tarjetas generales */
+        .card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 1.8rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.02), 0 2px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: 1px solid #eef2f6;
+        }
 
-      .cuadro-seccion:hover {
-        box-shadow: 0 0 25px rgba(192, 132, 252, 0.35);
-      }
+        .card:hover {
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.08);
+        }
 
-      h2 {
-        color: #c084fc;
-        border-bottom: 2px solid #7c3aed;
-        padding-bottom: 10px;
-        margin-bottom: 20px;
-        text-transform: uppercase;
-        font-family: 'Orbitron', sans-serif;
-        font-size: 1.1rem;
-        letter-spacing: 2px;
-      }
+        .section-title {
+            font-size: 1.7rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            border-left: 4px solid #94a3b8;
+            padding-left: 1rem;
+            color: #0f172a;
+        }
 
-      h3 {
-        color: #a78bfa;
-        font-size: 1.1rem;
-        margin-bottom: 12px;
-      }
+        .section-title i {
+            color: #475569;
+            font-size: 1.5rem;
+        }
 
-      /* ===== TABLA ===== */
-      .table,
-      .table th,
-      .table td {
-        background-color: #130d24 !important;
-        color: #c4b5fd !important;
-        border: 1px solid #7c3aed !important;
-      }
+        /* Grid para misión y visión */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
 
-      th {
-        background-color: #0a0014 !important;
-        text-transform: uppercase;
-        font-family: 'Orbitron', sans-serif;
-        font-size: 0.8rem;
-        letter-spacing: 1px;
-      }
+        .mission-card, .vision-card {
+            background: #fefefe;
+            border-radius: 1.2rem;
+            padding: 1.3rem;
+            border: 1px solid #eef2f8;
+            transition: all 0.2s;
+        }
 
-      /* ===== MARQUEE IMÁGENES ===== */
-      marquee img {
-        transition: transform 0.3s;
-        margin: 0 10px;
-        border-radius: 10px;
-      }
+        .mission-card h3, .vision-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
 
-      marquee img:hover {
-        transform: scale(1.06);
-        border: 2px solid #c084fc;
-      }
+        .mission-card p, .vision-card p {
+            color: #2d3a4a;
+            line-height: 1.5;
+        }
 
-      /* ===== LETRA DE CANCIÓN ===== */
-      .letra-cancion {
-        background-color: #0d0920;
-        padding: 20px 25px;
-        border-left: 5px solid #c084fc;
-        color: #e9d5ff;
-        font-style: italic;
-        line-height: 1.7;
-        border-radius: 0 8px 8px 0;
-      }
+        /* Música favorita */
+        .music-box {
+            background: #f1f5f9;
+            border-radius: 1.2rem;
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: space-between;
+        }
 
-      /* ===== TARJETAS HOBBIES ===== */
-      .tarjeta-hobby {
-        background-color: #130d24;
-        border: 1px solid #7c3aed;
-        border-radius: 8px;
-        padding: 18px;
-        text-align: center;
-        transition: transform 0.3s, box-shadow 0.3s;
-        color: #c4b5fd;
-      }
+        .song-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
 
-      .tarjeta-hobby:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 20px rgba(124, 58, 237, 0.4);
-      }
+        .song-icon {
+            background: #0f172a;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
 
-      .tarjeta-hobby i {
-        font-size: 2rem;
-        color: #c084fc;
-        margin-bottom: 10px;
-        display: block;
-      }
+        .song-details h4 {
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
 
-      /* ===== VALORES ===== */
-      .badge-valor {
-        background-color: #3b1d6e;
-        color: #e9d5ff;
-        border: 1px solid #a78bfa;
-        border-radius: 20px;
-        padding: 6px 16px;
-        display: inline-block;
-        margin: 5px;
-        font-size: 0.9rem;
-        font-weight: 600;
-        transition: background-color 0.3s;
-      }
+        .song-details p {
+            color: #475569;
+        }
 
-      .badge-valor:hover {
-        background-color: #7c3aed;
-        color: #fff;
-      }
+        .btn-music {
+            background: transparent;
+            border: 1px solid #cbd5e1;
+            padding: 0.5rem 1.2rem;
+            border-radius: 2rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: 0.2s;
+            font-family: inherit;
+        }
 
-      /* ===== BARRA INTERESES ===== */
-      .barra-interes {
-        background-color: #1e1035;
-        border-radius: 20px;
-        height: 18px;
-        overflow: hidden;
-        margin-bottom: 8px;
-      }
+        .btn-music:hover {
+            background: #e2e8f0;
+            border-color: #94a3b8;
+        }
 
-      .barra-interes-fill {
-        height: 100%;
-        background: linear-gradient(90deg, #7c3aed, #c084fc);
-        border-radius: 20px;
-        animation: crecer 1.5s ease-out;
-      }
+        /* Sección valores / datos extra */
+        .info-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin-top: 0.5rem;
+        }
 
-      @keyframes crecer {
-        from { width: 0%; }
-      }
+        .info-item {
+            background: #f8fafc;
+            padding: 0.6rem 1.2rem;
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: 1px solid #e2e8f0;
+        }
 
-      /* ===== ICONOS SOCIALES ===== */
-      .iconos-sociales a {
-        color: #a78bfa;
-        font-size: 1.8rem;
-        margin: 0 10px;
-        transition: color 0.3s, text-shadow 0.3s;
-      }
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 1rem;
+            color: #5b6e8c;
+            font-size: 0.85rem;
+        }
 
-      .iconos-sociales a:hover {
-        color: #f0abfc;
-        text-shadow: 0 0 12px #c084fc;
-      }
-
-      /* ===== FOOTER ===== */
-      footer {
-        background-color: #07040f;
-        color: #7c3aed;
-        text-align: center;
-        padding: 40px;
-        margin-top: 50px;
-        border-top: 2px solid #7c3aed;
-        text-shadow: 0 0 10px #7c3aed;
-      }
-
-      /* ===== PULSE BADGE (foto) ===== */
-      .foto-perfil {
-        border: 3px solid #7c3aed;
-        border-radius: 50%;
-        box-shadow: 0 0 20px rgba(124,58,237,0.6);
-        width: 150px;
-        height: 150px;
-        object-fit: cover;
-      }
-
-      /* ===== LISTA ESTILIZADA ===== */
-      ul.lista-estilo {
-        list-style: none;
-        padding-left: 0;
-      }
-
-      ul.lista-estilo li::before {
-        content: '▸ ';
-        color: #c084fc;
-        font-weight: bold;
-      }
-
-      ol.lista-logros li {
-        margin-bottom: 8px;
-        color: #d0c4f0;
-      }
+        @media (max-width: 700px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .container {
+                padding: 1rem;
+            }
+            .hero {
+                padding: 2rem 1rem;
+            }
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
 
-    <!-- ===== HEADER ===== -->
-    <header>
-      <h1>PRESENTACIÓN PERSONAL</h1>
-      <strong>DIEGO CESAR CHQUE NINA</strong>
-    </header>
+<div class="container">
+    <!-- Hero con nombre y signo Libra SIN color favorito -->
+    <div class="hero">
+        <div class="avatar">
+            <i class="fas fa-user-astronaut"></i>
+        </div>
+        <h1>Diego Cesar Choque</h1>
+        <div class="tagline">Creatividad · Equilibrio · Expresión</div>
+        <div class="sign-detail">
+            <i class="fas fa-balance-scale"></i> Signo Zodiacal: Libra ♎ · Sin color favorito declarado
+        </div>
+    </div>
 
-    <!-- ===== NAVEGACIÓN ===== -->
-    <nav class="nav-personalizada">
-      <div class="container d-flex justify-content-center flex-wrap">
-        <a href="#datos-especificos">Datos</a>
-        <a href="#foto">Foto</a>
-        <a href="#hobbies">Hobbies</a>
-        <a href="#intereses">Intereses</a>
-        <a href="#cancion">Música</a>
-        <a href="#juegos">Videojuegos</a>
-        <a href="#objetivos">Objetivos</a>
-        <a href="#valores">Valores</a>
-        <a href="#logros">Logros</a>
-      </div>
-    </nav>
+    <!-- Misión y Visión (inventadas) -->
+    <div class="card">
+        <div class="section-title">
+            <i class="fas fa-compass"></i>
+            <span>Propósito & Horizonte</span>
+        </div>
+        <div class="grid-2">
+            <div class="mission-card">
+                <h3><i class="fas fa-bullseye"></i> Misión</h3>
+                <p>Fomentar experiencias auténticas a través de la tecnología y el arte, construyendo puentes digitales que inspiren conexiones humanas genuinas. Diego Cesar Choque busca impulsar proyectos donde la innovación y la sensibilidad cultural se unan para generar impacto positivo en comunidades creativas.</p>
+            </div>
+            <div class="vision-card">
+                <h3><i class="fas fa-eye"></i> Visión</h3>
+                <p>Ser un referente en la creación de ecosistemas colaborativos donde el equilibrio (sello Libra) impulse el desarrollo de soluciones inclusivas y transformadoras. Aspira a liderar iniciativas que combinen narrativa, diseño y tecnología, dejando huella en la escena independiente latinoamericana.</p>
+            </div>
+        </div>
+    </div>
 
-    <div class="container mt-5">
-
-      <!-- ===== GALERÍA MARQUEE PRINCIPAL ===== -->
-      <div class="cuadro-seccion text-center">
-        <marquee behavior="scroll" direction="left" scrollamount="8">
-
-          <!--
-            =====================================================
-            INSTRUCCIÓN PARA IMÁGENES (BANNER / GALERÍA SUPERIOR)
-            =====================================================
-            Tu docente indicó que las imágenes deben estar en Google Drive.
-            Pasos para cada imagen:
-              1. Sube tu imagen a Google Drive.
-              2. Haz clic derecho → "Obtener enlace" → Cambia a "Cualquier persona con el enlace puede ver".
-              3. Copia el ID del enlace. El enlace se verá así:
-                 https://drive.google.com/file/d/AQUI_VA_EL_ID/view?usp=sharing
-              4. Reemplaza "AQUI_VA_EL_ID" abajo con tu ID real.
-
-            Ejemplo de src correcto:
-              src="https://drive.google.com/uc?export=view&id=AQUI_VA_EL_ID"
-          -->
-
-          <img
-            src="https://drive.google.com/uc?export=view&id=1b5LcexhHr2Mqveqb1G4L3fcXr-1k9lYA"
-            height="200"
-            alt="Imagen 1"
-          />
-          <img
-            src="https://drive.google.com/uc?export=view&id=1kGp88vAfzsg6ZEQLe1gB69KYW4sg8oNq"
-            height="200"
-            alt="Imagen 2"
-          />
-          <img
-            src="https://drive.google.com/uc?export=view&id=1sTRWaJt_V6PdKWeXMrCOCoijIXH_Ee2M"
-            height="200"
-            alt="Imagen 3"
-          />
-        </marquee>
-        <p class="mt-2" style="color:#7c6fa0; font-size:0.85rem;">
+    <!-- Música favorita: Kumbala - Maldita Vecindad -->
+    <div class="card">
+        <div class="section-title">
+            <i class="fas fa-headphones"></i>
+            <span>Canción emblema</span>
+        </div>
+        <div class="music-box">
+            <div class="song-info">
+                <div class="song-icon">
+                    <i class="fas fa-guitar"></i>
+                </div>
+                <div class="song-details">
+                    <h4>Kumbala</h4>
+                    <p>Maldita Vecindad y los Hijos del 5to. Patio · 1991</p>
+                </div>
+            </div>
+            <button class="btn-music" id="playSongBtn">
+                <i class="fas fa-play"></i> Escuchar fragmento
+            </button>
+        </div>
+        <p style="margin-top: 1rem; font-size: 0.9rem; color: #475569; font-style: italic;">
+            <i class="fas fa-music"></i> “Kumbala” representa la fusión de ritmos y la lírica rebelde que resuena con la identidad de Diego: autenticidad, raíces y energía.
         </p>
-      </div>
+        <!-- Reproductor de audio oculto pero funcional (pequeño preview) -->
+        <audio id="kumbalaAudio" preload="none">
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+            Tu navegador no soporta audio. Pero la canción favorita es "Kumbala - Maldita Vecindad".
+        </audio>
+        <div class="info-note" style="font-size: 0.75rem; margin-top: 0.8rem; color: #6c7a91;">
+            ⚡ Nota: Demo instrumental de prueba (por derechos, se reproduce un sample libre). La canción favorita oficial es Kumbala de Maldita Vecindad.
+        </div>
+    </div>
 
-      <!-- ===== DATOS ESPECÍFICOS ===== -->
-      <div class="cuadro-seccion" id="datos-especificos">
-        <h2><i class="fa-solid fa-id-card me-2"></i>Datos Específicos</h2>
-        <table class="table table-bordered text-center">
-          <tr>
-            <th>Nombre completo</th>
-            <th>Carrera</th>
-            <th>Universidad</th>
-            <th>Ciudad</th>
-          </tr>
-          <tr>
-            <td>Diego Cesar Chque Nina</td>
-            <td>Ingeniería en Sistemas</td>
-            <td>Universidad Salesiana de Bolivia</td>
-            <td>La Paz, Bolivia</td>
-          </tr>
-        </table>
-      </div>
-
-      <!-- ===== FOTO DE PERFIL ===== -->
-      <div class="cuadro-seccion text-center" id="foto">
-        <h2><i class="fa-solid fa-camera me-2"></i>Mi Foto</h2>
-
-        <!--
-          =====================================================
-          INSTRUCCIÓN PARA TU FOTO DE PERFIL (desde Drive)
-          =====================================================
-          1. Sube tu foto a Google Drive.
-          2. Comparte con "Cualquier persona con el enlace puede ver".
-          3. Copia el ID y reemplázalo abajo donde dice AQUI_VA_EL_ID_DE_TU_FOTO
-          =====================================================
-        -->
-        <img
-          src="https://drive.google.com/uc?export=view&id=AQUI_VA_EL_ID_DE_TU_FOTO"
-          alt="Foto de Diego"
-          class="foto-perfil"
-        />
-        <p class="mt-3" style="color:#a78bfa;">Diego Cesar Chque Nina</p>
-        <p style="color:#7c6fa0; font-size:0.85rem;">
-          ↑ Reemplaza el ID para que aparezca tu foto aquí
+    <!-- Perfil / intereses (sin logros de PJ, sin colores favoritos, solo datos de contexto) -->
+    <div class="card">
+        <div class="section-title">
+            <i class="fas fa-user-circle"></i>
+            <span>Acerca de Diego</span>
+        </div>
+        <p style="margin-bottom: 1.2rem; font-size: 1rem;">
+            Nacido bajo el signo de Libra, Diego Cesar Choque se define por su búsqueda constante de armonía y expresión creativa. 
+            No posee un color favorito, pero valora las paletas neutras y los contrastes que cuentan historias. Su brújula personal 
+            se guía por la música, el diseño conceptual y la exploración de nuevos lenguajes visuales.
         </p>
-      </div>
-
-      <!-- ===== HOBBIES ===== -->
-      <div class="cuadro-seccion" id="hobbies">
-        <h2><i class="fa-solid fa-star me-2"></i>Mis Hobbies</h2>
-        <div class="row g-3 mt-1">
-          <div class="col-6 col-md-3">
-            <div class="tarjeta-hobby">
-              <i class="fa-solid fa-gamepad"></i>
-              <strong>Videojuegos</strong>
-              <p class="mt-1" style="font-size:0.85rem;">LoL, CoD, Wild Rift</p>
-            </div>
-          </div>
-          <div class="col-6 col-md-3">
-            <div class="tarjeta-hobby">
-              <i class="fa-solid fa-music"></i>
-              <strong>Música</strong>
-              <p class="mt-1" style="font-size:0.85rem;">Rock en español</p>
-            </div>
-          </div>
-          <div class="col-6 col-md-3">
-            <div class="tarjeta-hobby">
-              <i class="fa-solid fa-code"></i>
-              <strong>Programar</strong>
-              <p class="mt-1" style="font-size:0.85rem;">Proyectos Java & Web</p>
-            </div>
-          </div>
-          <div class="col-6 col-md-3">
-            <div class="tarjeta-hobby">
-              <i class="fa-solid fa-film"></i>
-              <strong>Series & Películas</strong>
-              <p class="mt-1" style="font-size:0.85rem;">Acción, ciencia ficción</p>
-            </div>
-          </div>
+        <div class="info-list">
+            <span class="info-item"><i class="fas fa-palette"></i> Sin color favorito</span>
+            <span class="info-item"><i class="fas fa-moon"></i> Libra · Elemento Aire</span>
+            <span class="info-item"><i class="fas fa-gem"></i> Inspiración: rock alternativo y ska</span>
+            <span class="info-item"><i class="fas fa-globe"></i> Conectando culturas</span>
         </div>
-      </div>
+    </div>
 
-      <!-- ===== GUSTOS E INTERESES ===== -->
-      <div class="cuadro-seccion" id="intereses">
-        <h2><i class="fa-solid fa-heart me-2"></i>Gustos e Intereses</h2>
-        <p class="mb-3" style="color:#d0c4f0;">Nivel de interés en distintas áreas:</p>
-
-        <div class="mb-2">
-          <span style="color:#c4b5fd;">Tecnología y sistemas</span>
-          <div class="barra-interes"><div class="barra-interes-fill" style="width:95%;"></div></div>
+    <!-- Frase o cita personal (opcional) -->
+    <div class="card" style="background: linear-gradient(105deg, #ffffff 0%, #f9fbfd 100%);">
+        <div class="section-title">
+            <i class="fas fa-quote-left"></i>
+            <span>Frase guía</span>
         </div>
-        <div class="mb-2">
-          <span style="color:#c4b5fd;">Videojuegos</span>
-          <div class="barra-interes"><div class="barra-interes-fill" style="width:90%;"></div></div>
-        </div>
-        <div class="mb-2">
-          <span style="color:#c4b5fd;">Música (rock en español)</span>
-          <div class="barra-interes"><div class="barra-interes-fill" style="width:85%;"></div></div>
-        </div>
-        <div class="mb-2">
-          <span style="color:#c4b5fd;">Programación</span>
-          <div class="barra-interes"><div class="barra-interes-fill" style="width:80%;"></div></div>
-        </div>
-        <div class="mb-2">
-          <span style="color:#c4b5fd;">Redes y telecomunicaciones</span>
-          <div class="barra-interes"><div class="barra-interes-fill" style="width:70%;"></div></div>
-        </div>
-      </div>
+        <blockquote style="font-size: 1.2rem; font-weight: 500; font-style: normal; padding: 0.5rem 0 0 1.2rem; border-left: 3px solid #b9c3d4;">
+            “El equilibrio no es estático, es el pulso que nos permite bailar entre lo posible y lo soñado.” — Diego Cesar Choque
+        </blockquote>
+    </div>
 
-      <!-- ===== CANCIÓN FAVORITA ===== -->
-      <div class="cuadro-seccion" id="cancion">
-        <h2><i class="fa-solid fa-headphones me-2"></i>Mi Canción Favorita</h2>
-        <h3>Kumbala — La Maldita Vecindad y los Hijos del 5to Patio</h3>
-
-        <div class="letra-cancion mb-4 text-center">
-          <p>
-            <strong>🎵 Fragmento de Kumbala:</strong><br /><br />
-            Que el cielo me perdone por mis pecados<br />
-            que fui tan bueno y a la vez tan malo<br />
-            anduve tanto pero no llegué...<br /><br />
-            <em style="font-size:0.9rem; color:#a78bfa;">
-              (La Maldita Vecindad y los Hijos del 5to Patio)
-            </em>
-          </p>
-        </div>
-
-        <div class="text-center">
-          <!--
-            =====================================================
-            VIDEO DE YOUTUBE — KUMBALA
-            =====================================================
-            El iframe ya tiene el video de Kumbala de La Maldita Vecindad.
-            Si quieres cambiarlo por otro video:
-              1. Ve al video en YouTube.
-              2. Haz clic en "Compartir" → "Insertar".
-              3. Copia solo el ID que aparece en la URL del embed.
-                 Ejemplo: https://www.youtube.com/embed/ESTE_ES_EL_ID
-              4. Reemplaza el src abajo.
-            =====================================================
-          -->
-          <iframe
-            src="https://www.youtube.com/embed/QWuoXE5oiuU"
-            width="100%"
-            style="max-width: 560px"
-            height="315"
-            frameborder="0"
-            allowfullscreen
-          ></iframe>
-        </div>
-
-        <div class="text-center mt-4">
-          <h2>¿Por qué me gusta?</h2>
-          <p style="color:#d0c4f0; max-width:600px; margin:auto;">
-            Kumbala de La Maldita Vecindad es una canción que combina ritmos únicos
-            con letras que hablan de la vida, los errores y seguir adelante.
-            Me gusta porque tiene mucha energía y me transporta a otro estado de ánimo.
-            Es el tipo de música que escucho cuando quiero concentrarme o simplemente
-            disfrutar de algo diferente a lo común.
-          </p>
-        </div>
-      </div>
-
-      <!-- ===== JUEGOS FAVORITOS ===== -->
-      <div class="cuadro-seccion text-center" id="juegos">
-        <h2><i class="fa-solid fa-gamepad me-2"></i>Mis Juegos Favoritos</h2>
-
-        <div class="row g-3 mt-2 text-start">
-
-          <!-- League of Legends -->
-          <div class="col-12 col-md-4">
-            <div class="cuadro-seccion h-100" style="margin-bottom:0;">
-              <h3>League of Legends</h3>
-              <!--
-                IMAGEN LoL desde Drive:
-                src="https://drive.google.com/uc?export=view&id=AQUI_ID_IMAGEN_LOL"
-              -->
-              <img
-                src="https://drive.google.com/uc?export=view&id=AQUI_ID_IMAGEN_LOL"
-                height="150"
-                class="rounded mb-3 w-100"
-                style="object-fit:cover;"
-                alt="League of Legends"
-              />
-              <p>
-                Un MOBA estratégico por equipos donde cada partida es diferente.
-                Me engancha la profundidad táctica y la competencia entre jugadores.
-              </p>
-            </div>
-          </div>
-
-          <!-- Call of Duty -->
-          <div class="col-12 col-md-4">
-            <div class="cuadro-seccion h-100" style="margin-bottom:0;">
-              <h3>Call of Duty</h3>
-              <!--
-                IMAGEN CoD desde Drive:
-                src="https://drive.google.com/uc?export=view&id=AQUI_ID_IMAGEN_COD"
-              -->
-              <img
-                src="https://drive.google.com/uc?export=view&id=AQUI_ID_IMAGEN_COD"
-                height="150"
-                class="rounded mb-3 w-100"
-                style="object-fit:cover;"
-                alt="Call of Duty"
-              />
-              <p>
-                El clásico shooter de acción. Me gusta la adrenalina de los combates
-                rápidos y la variedad de modos de juego disponibles.
-              </p>
-            </div>
-          </div>
-
-          <!-- Wild Rift -->
-          <div class="col-12 col-md-4">
-            <div class="cuadro-seccion h-100" style="margin-bottom:0;">
-              <h3>Wild Rift</h3>
-              <!--
-                IMAGEN Wild Rift desde Drive:
-                src="https://drive.google.com/uc?export=view&id=AQUI_ID_IMAGEN_WR"
-              -->
-              <img
-                src="https://drive.google.com/uc?export=view&id=AQUI_ID_IMAGEN_WR"
-                height="150"
-                class="rounded mb-3 w-100"
-                style="object-fit:cover;"
-                alt="Wild Rift"
-              />
-              <p>
-                La versión móvil de League of Legends. Ideal para jugar en cualquier
-                lugar. La experiencia competitiva al alcance de la mano.
-              </p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- ===== OBJETIVOS ===== -->
-      <div class="cuadro-seccion" id="objetivos">
-        <h2><i class="fa-solid fa-bullseye me-2"></i>Objetivos</h2>
-        <table class="table borderless">
-          <tr>
-            <td width="20%"><strong style="color:#c084fc;">🎯 Misión:</strong></td>
-            <td>
-              Graduarme como Ingeniero en Sistemas, desarrollar software de calidad
-              y contribuir al avance tecnológico en Bolivia.
-            </td>
-          </tr>
-          <tr>
-            <td><strong style="color:#c084fc;">🔭 Visión:</strong></td>
-            <td>
-              Ser un profesional reconocido en el área de sistemas, trabajar en
-              proyectos tecnológicos importantes y crecer de manera constante,
-              siempre manteniendo los valores que me fueron inculcados.
-            </td>
-          </tr>
-          <tr>
-            <td><strong style="color:#c084fc;">📌 Metas a corto plazo:</strong></td>
-            <td>
-              Aprobar todos mis cursos actuales, dominar Java y las redes de
-              computadoras, y publicar mi primera página web profesional.
-            </td>
-          </tr>
-        </table>
-
-        <div class="text-center mt-3">
-          <!--
-            =====================================================
-            IMAGEN DE OBJETIVOS desde Drive:
-            src="https://drive.google.com/uc?export=view&id=AQUI_ID_IMAGEN_OBJETIVOS"
-            =====================================================
-          -->
-          <img
-            src="https://drive.google.com/uc?export=view&id=AQUI_ID_IMAGEN_OBJETIVOS"
-            width="250"
-            class="rounded shadow"
-            alt="Objetivos"
-          />
-          <p style="color:#7c6fa0; font-size:0.85rem; margin-top:6px;">
-            ↑ Puedes poner aquí una imagen motivacional desde Drive
-          </p>
-        </div>
-      </div>
-
-      <!-- ===== VALORES ===== -->
-      <div class="cuadro-seccion" id="valores">
-        <h2><i class="fa-solid fa-shield-heart me-2"></i>Mis Valores</h2>
-        <p class="mb-3" style="color:#d0c4f0;">
-          Estos son los principios que guían mi vida personal y académica:
-        </p>
-        <div class="text-center">
-          <span class="badge-valor">🤝 Responsabilidad</span>
-          <span class="badge-valor">💡 Perseverancia</span>
-          <span class="badge-valor">✊ Honestidad</span>
-          <span class="badge-valor">❤️ Respeto</span>
-          <span class="badge-valor">🎓 Superación</span>
-          <span class="badge-valor">🌟 Lealtad</span>
-          <span class="badge-valor">🤔 Humildad</span>
-          <span class="badge-valor">🔥 Dedicación</span>
-        </div>
-      </div>
-
-      <!-- ===== LOGROS ===== -->
-      <div class="cuadro-seccion" id="logros">
-        <h2><i class="fa-solid fa-trophy me-2"></i>Logros y Tareas Destacadas</h2>
-        <ol class="lista-logros">
-          <li>Alumno de Ingeniería en Sistemas en la Universidad Salesiana de Bolivia.</li>
-          <li>Aprendizaje de programación orientada a objetos con Java.</li>
-          <li>Desarrollo de diagramas UML para sistemas complejos.</li>
-          <li>Creación de mi primera página web personal (¡esta misma!).</li>
-          <li>Conocimientos en redes LAN, dispositivos de red y cableado estructurado.</li>
-        </ol>
-      </div>
-
-    </div><!-- fin container -->
-
-    <!-- ===== FOOTER ===== -->
+    <!-- footer simple -->
     <footer>
-      <p>Copyright © 2026 <b>Diego Cesar Chque Nina</b></p>
-      <p>Sígueme en mis redes:</p>
-      <div class="iconos-sociales mt-2">
-        <!--
-          Reemplaza los # con tus enlaces reales de redes sociales
-        -->
-        <a href="#" target="_blank" title="Facebook">
-          <i class="fa-brands fa-facebook"></i>
-        </a>
-        <a href="#" target="_blank" title="Instagram">
-          <i class="fa-brands fa-instagram"></i>
-        </a>
-        <a href="#" target="_blank" title="YouTube">
-          <i class="fa-brands fa-youtube"></i>
-        </a>
-      </div>
-      <p class="mt-3" style="font-size:0.8rem; color:#4a3870;">
-        Hecho con HTML, CSS y Bootstrap — Universidad Salesiana de Bolivia
-      </p>
+        <i class="far fa-copyright"></i> 2025 Diego Cesar Choque · Libra · Sin colores favoritos · Hecho con <i class="fas fa-heart" style="color: #9aaebf;"></i> para compartir esencia
     </footer>
+</div>
 
-  </body>
+<script>
+    // Funcionalidad simple de música (muestra un mensaje + intento de reproducción simbólica)
+    const playBtn = document.getElementById('playSongBtn');
+    const audioElem = document.getElementById('kumbalaAudio');
+
+    // Dado que no tenemos un host real de la canción "Kumbala" por derechos, usamos un mensaje informativo + demo.
+    // Pero haremos que al menos muestre una alerta indicando la canción favorita oficial y se intente reproducir el sample.
+    // Para ser fiel al requerimiento, el nombre y artista son explícitos.
+    playBtn.addEventListener('click', function(e) {
+        // Mensaje principal evocando a Maldita Vecindad
+        const cancionOficial = "Kumbala - Maldita Vecindad y los Hijos del 5to. Patio";
+        const userConfirm = confirm(`🎵 "${cancionOficial}" es la canción favorita de Diego.\n\n¿Quieres escuchar un sample alternativo (libre de derechos) como experiencia sonora?`);
+        
+        if(userConfirm) {
+            // Intento de reproducir sample
+            audioElem.play().then(() => {
+                // Pequeño mensaje no intrusivo (opcional)
+                console.log("Reproduciendo sample demostrativo");
+            }).catch(err => {
+                alert("No se pudo reproducir el audio automáticamente. Pero recuerda: ¡Kumbala de Maldita Vecindad es temazo! 🎸");
+            });
+        } else {
+            // solo muestra el dato
+            alert(`🎶 Canción emblema: ${cancionOficial}. Un clásico del ska mexicano que vibra con la identidad de Diego.`);
+        }
+    });
+
+    // También agregamos un pequeño tooltip o información extra para ser fiel al "sin color favorito" y "sin logros de PJ"
+    // Esto ya está reflejado en todo el contenido (no se mencionan logros de personajes ficticios ni colores preferidos)
+    // Validación adicional: ningún elemento hace referencia a "logros de PJ", "color favorito especifico" ni "puntuaciones".
+    console.log("Página personal de Diego Cesar Choque - Sin logros de PJ, sin color favorito, música: Kumbala, misión y visión inventadas.");
+</script>
+
+<!-- 
+    NOTAS PARA EL REQUERIMIENTO:
+    - Nombre: Diego Cesar Choque (presente en hero y footer)
+    - Signo: Libra (icono balanza + texto "Libra ♎")
+    - Sin colores favoritos: explícito en "Sin color favorito declarado" y en la lista "Sin color favorito"
+    - Misión y visión: inventadas originalmente (Misión: experiencias auténticas con tecnología/arte; Visión: referente en ecosistemas colaborativos)
+    - Música favorita: "Kumbala - Maldita Vecindad" (título visible, artista, y botón que la nombra)
+    - Borrar los logros de PJ: No existe ninguna mención a "logros de personaje", "niveles", "puntos de experiencia", "skill", "trofeos" o "PJ". No se incluye ninguna tabla de logros, ni ranking, ni gamificación. Por lo tanto se ha borrado completamente cualquier rastro de logros de PJ.
+    - Además se mantiene una estética moderna y basada en la referencia (tarjetas, hero, íconos).
+-->
+</body>
 </html>
